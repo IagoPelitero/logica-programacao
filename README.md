@@ -20,6 +20,7 @@ console.log(`A subtração dos números é ${numero1 - numero2}`);
 console.log(`A multiplicação dos números é ${numero1 * numero2}`);
 console.log(`A divisão dos números é ${numero1 / numero2}`);
 console.log(`A resto da divisão dos números é ${numero1 % numero2}`);
+console.log(`O numero1 elevado à potência do numero2 é ${numero1 ** numero2}`);
 ~~~
 
 Em cada uma das operações, temos um operador aritmético:
@@ -29,6 +30,7 @@ Em cada uma das operações, temos um operador aritmético:
 * `*` -> multiplicação
 * `/` -> divisão
 * `%` -> resto
+* `**` -> exponênciação
 
 ## operadores-atribuicao.js
 
@@ -38,7 +40,7 @@ let numero = 10;
 
 Declaramos a varável `numero` usando a palvra `let`, pois essa variável será **reatribuída** ao longo do nosso código.
 
-Em seguida, fazemos uma série de reatribuições usando os operadores de reatribuição.]
+Em seguida, fazemos uma série de reatribuições usando os operadores de reatribuição.
 
 ~~~js
 console.log(`O número incialmente igual a ${numero}`);
@@ -63,4 +65,75 @@ Operadores de atribuição:
 * `%=` -> atribuição com resto da divisão
 * `++` -> atribuição com **incremento 1** (pode ser *pré* ou *pós* incrementado). Ex: `numero ++` (pós-incremento) ou `++ numero` (pré-incremento).
 * `--` -> atribuição com **decremento 1** (pode ser *pré* ou *pós* decrementado). Ex: `numero --` (pós-decremento) ou `-- numero` (pré-decremento).
+
+## operadore-comparacao.js
+
+Neste arquivo conhecemos os operadores de comparação e a estrutura lógica de decisão **if-else**.
+
+~~~js
+if (condicao) {
+        console.log(`VERDADEIRA`);
+} else {
+    console.log(`FALSO`)
+}
+~~~
+
+Esta estrutura exibe no console se a condição testada é `true` (verdadeira) ou `false` (falsa). A condição armazena o resultado da **comparação entre duas variáveis**, como segue:
+
+~~~js
+const a = `a`, b = `A`;
+const condicao = a == b;
+~~~
+
+Operadores de comparação:
+
+* `==` -> é igual
+* `===` -> é estritamente igual *(valor e tipo)*
+* `!==` -> _não_ é estritamente igual *(valor e tipo)*
+* `!=` -> não é igual
+* `>` -> maior que
+* `<` -> menor que
+* `>=` -> maior ou igual
+* `<=` -> menor ou igual
+
+## desafio1.js
+
+// Escreva um código em JavaScript que resolva o problema descritono livro  Lógica de Programação I, p. 20, em que temos que obter as 3 notas de um aluno, calcular a média e exibir se o aluno foi aprovado, reprovado ou se ficou para exame. Não é necessário ler as notas, você pode defini-las com variáveis.
+// Você precisará uma estrutura de decisão composta, como a seguir:
+
+if (condicao1){
+    código da condicao1
+} else if (condicao2){
+    código da condicao2
+} else {
+    código se numa das condições for verdadeira
+}
+
+## desafio2.js
+
+Crie um programa que calcule o Índice de Massa Corporal (IMC) de uma pessoa.
+
+Orientações:
+
+* Utilize o método `prompt()` do objeto `window` para realizar a leitura dos dados de entrada.
+* Utilize a fórmula **IMC = peso / altura²** para calcular o IMC.
+* Utilize a estrutura **if-else** para classificar o IMC de acordo com a tabela da OMS:
+
+IMC | Indicação
+---|---------
+Abaixo de 18,5	| Abaixo do peso
+18,5 - 24,9	| Peso normal
+25,0 - 29,9	| Sobrepeso
+30,0 - 34,9	| Obesidade grau I
+35,0 - 39,9	| Obesidade grau II
+Acima de 40,0 |	Obesidade grau III
+
+Observações:
+
+O IMC é apenas uma medida geral e não leva em consideração a composição corporal (músculos versus gordura). Pessoas com muita massa muscular podem ter um IMC alto, mesmo que não sejam obesas. É importante consultar um médico ou nutricionista para uma avaliação individualizada.
+
+Para mais informações:
+
+Organização Mundial da Saúde (OMS): <https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight>
+
 
