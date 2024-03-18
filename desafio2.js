@@ -1,24 +1,18 @@
-window.pronpt('Peso')
-window.pronpt('altura')
 
-const IMC = peso / altura ** 2;
+const 
+ peso = window.prompt('Peso'),
+ altura = window.prompt('altura'),
+ IMC = peso / (altura ** 2);
 
-
-if (0 <18.5){
-    console.log('Abaixo do peso');
-} else if (18.5 >= 24.9) {
-    console.log('Peso normal');
-} else if (25 >= 29.9){
-    console.log('Sobrepeso')
-} else if (30 >= 34.9){
-    console.log('Obesidade grau I')
-}else if (35 >= 39.9){
-    console.log('Obesidade grau II')
+if (IMC < 18.5){
+    window.alert(`IMC: ${IMC.toFixed(1)} --> Abaixo do peso`);
+} else if (IMC < 25) {
+    window.alert(`IMC: ${IMC.toFixed(1)} --> Peso normal`);
+} else if (IMC < 30){
+    window.alert(`IMC: ${IMC.toFixed(1)} --> Sobrepeso`)
+} else if (IMC < 35){
+    window.alert(`IMC: ${IMC.toFixed(1)} --> Obesidade grau I`)
+}else if (IMC < 40){
+    window.alert(`IMC: ${IMC.toFixed(1)} --> Obesidade grau II`)
 } else {
-    console.log('Obesidade grau III')
-}
-
-
-
-
-
+    window.alert(`IMC: ${IMC.toFixed(1)} --> Obesidade grau III`)} 
