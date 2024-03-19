@@ -1,26 +1,39 @@
-const temperatura = window.prompt('Qual valor da temperatura?');
-const escala = window.prompt('Digite a escala atual se é em celsius ou fahrenheit ou kelvin');
-const conversao = window.prompt('Qual escala deve ser?')
+const temperatura = parseFloat(window.prompt('Qual valor da temperatura?'));
+const escala = window.prompt('Digite a escala atual se é em c ou f ou k').toLowerCase();
+const conversao = window.prompt('Qual escala deve ser?').toLowerCase();
 
-const celsiusParaFahrenheit = (temperatura * 9/5) + 32;
-const celsiusParaKelvin = temperatura - 273.15;
-
-const fahrenheitParaCelsius = (temperatura - 32) * 5/9;
-const fahrenheitParaKelvin = (temperatura + 459.67) * 5/9;
-
-const kelvinParaCelsius = temperatura + 273.15;
-const kelvinParaFarenheit = (temperatura - 273.15) * 9/5 + 32;
-
-if (escala.toLocaleLowerCase(celsius) == conversao.toLocaleLowerCase(fahrenheit)) {
-    window.alert(`A temperatura correta é: ${celsiusParaFahrenheit}ºF`)
-} else if (escala.toLocaleLowerCase(celsius) == conversao.toLocaleLowerCase(kelvin)) {
-    window.alert(`A temperatura correta é: ${celsiusParaKelvin}ºK`)
-} else if (escala.toLocaleLowerCase(fahrenheit) == conversao.toLocaleLowerCase(celsius)){
-    window.alert(`A temperatura correta é: ${fahrenheitParaCelsius}ºC`)
-} else if (escala.toLocaleLowerCase(fahrenheit) == conversao.toLocaleLowerCase(kelvin)){
-    window.alert(`A temperatura correta é: ${fahrenheitParaKelvin}ºK`)
-} else if (escala.toLocaleLowerCase(kelvin) == conversao.toLocaleLowerCase(celsius)){
-    window.alert(`A temperatura correta é: ${kelvinParaCelsius}ºC`)
+if (!isNaN(temperatura)) {
+    if (isNaN(escala)) {
+        if (isNaN(conversao)){
+        if (escala == 'c'){
+            if (conversao == 'f') {
+                window.alert(`A temperatura convertida é ${((temperatura * 9/5) + 32).toFixed(2)}`);
+            } else if (conversao == 'k') { 
+                window.alert(`A temperatura convertida é ${(temperatura - 273.15).toFixed(2)}`);
+            } else {
+            window.alert('A conversao não pode ser igual a escala atual')
+            }
+        } else if (escala == 'f'){
+            if (conversao == 'k'){
+                window.alert(`A temperatura convertida é ${((temperatura - 32)* 5/9).toFixed(2)}`);
+            } else if (conversao == `c`) {
+                window.alert(`A temperatura convertida é ${((temperatura + 459.67) * 5/9).toFixed(2)}`);
+            }  else {
+                window.alert('A conversao não pode ser igual a escala atual')
+            }
+        } else {
+            if (conversao == 'c') {
+                window.alert(`A temperatura convertida é ${(temperatura + 273.15).toFixed(2)}`);
+            } else if (conversao == 'f') {
+                window.alert(`A temperatura convertida é ${((temperatura - 273.15) * 9/5 + 32).toFixed(2)}`);
+            } else {
+                window.alert('A conversao não pode ser igual a escala atual')
+            }
+        } } else {
+                window.alert('A escala não pode ser número! Atualize a página!')
+                } } else {
+                    window.alert('A conversão não pode ser número! Atualize a página!')
+                    } 
 } else {
-    window.alert(`A temperatura correta é: ${kelvinParaFarenheit}ºF`)
-}
+    window.alert('Foi informado uma letra no valor da temperatura! Atualize a página!')
+    }     
