@@ -158,3 +158,12 @@ Kelvin | Fahrenheit | tF = (tF - 273.15) * 9/5 + 32
 ### Problema adicional
 
 Como executar dois "programas" na mesma página?
+
+### desafio4.js
+
+Desenvolva o programa do desafio 3 em uma página HTML, obtendo os dados a partir de um formulário e exibindo o resultado na mesma página.
+
+* Utilize uma Tag `<input>` para obter a temperatura;
+* Utilize tags `<select>` para selecionar as escalas atuais e de conversão;
+* Utilize um botão para calcular a temperatura;
+* Apresente o resultado logo abaixo do formulário.
