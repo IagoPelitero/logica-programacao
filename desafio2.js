@@ -1,21 +1,21 @@
-function calculeIMC(){
+function calculeIMC(peso, altura){
     
-    const 
-     peso = window.prompt('Peso'),
-     altura = window.prompt('altura'),
-     IMC = peso / (altura ** 2);
+    const IMC = peso / (altura ** 2);
+    let mensagem;
 
     if (IMC < 18.5){
-        window.alert(`IMC: ${IMC.toFixed(1)} --> Abaixo do peso`);
+        mensagem = `IMC: ${IMC.toFixed(1)} --> Abaixo do peso`;
     } else if (IMC < 25) {
-        window.alert(`IMC: ${IMC.toFixed(1)} --> Peso normal`);
+        mensagem = `IMC: ${IMC.toFixed(1)} --> Peso normal`;
     } else if (IMC < 30){
-        window.alert(`IMC: ${IMC.toFixed(1)} --> Sobrepeso`)
+        mensagem = `IMC: ${IMC.toFixed(1)} --> Sobrepeso`;
     } else if (IMC < 35){
-        window.alert(`IMC: ${IMC.toFixed(1)} --> Obesidade grau I`)
+        mensagem = `IMC: ${IMC.toFixed(1)} --> Obesidade grau I`;
     }else if (IMC < 40){
-        window.alert(`IMC: ${IMC.toFixed(1)} --> Obesidade grau II`)
+        mensagem = `IMC: ${IMC.toFixed(1)} --> Obesidade grau II`;
     } else {
-        window.alert(`IMC: ${IMC.toFixed(1)} --> Obesidade grau III`)} 
+        mensagem = `IMC: ${IMC.toFixed(1)} --> Obesidade grau III`;} 
+
+    return mensagem;
 }
 
