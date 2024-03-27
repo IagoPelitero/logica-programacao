@@ -11,14 +11,19 @@
     <!-- TODO: Eliminar esses botões -->    
     <h2>Calculadora IMC</h2>
 
-    <label for="peso">Peso:</label>
-    <input type="number" id="peso" step="0.5" min="0" max="1000">
+    <form action="">
+        <label for="peso">Peso:</label>
+        <input type="number" id="peso" step="0.5" min="0" max="1000">
+    
+        <label for="altura">Altura:</label>
+        <input type="number" id="altura" step="0.01" min="0" max="3">
+    
+        <button type="button" id="btCalcIMC">Calcular IMC</button>
+        <button type="reset">Limpar</button>
 
-    <label for="altura">Altura:</label>
-    <input type="number" id="altura" step="0.01" min="0" max="3">
+    </form>
 
-    <button type="button" id="btCalcIMC">Calcular IMC</button>
-    <button type="reset">Limpar</button>
+    <div id="resultadoIMC"></div>
     
     <script src="desafio2.js"></script>
     <script src="desafio3.js"></script>
@@ -28,6 +33,8 @@
             const altura = document.querySelector('#altura').value;
             const imc = calculeIMC(peso, altura);
             console.log(imc)
+            // parte de entro do HTML -> innerHTML
+            document.querySelector('#resultadoIMC').innerHTML = imc;
         })
     </script>
 

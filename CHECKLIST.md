@@ -14,8 +14,8 @@ git config --global user.email
 ~~~
 9. Se as variáveis retornarem algum valor, redefina ambas as variáveis:
 ~~~bash
-git config --global user.name
-git config --global user.email
+git config --global --unset user.name
+git config --global --unset user.email
 ~~~
 10. Faça a clonagem do repositório no computador local:
 ~~~bash
