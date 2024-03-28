@@ -45,9 +45,10 @@
             <option value="K">Kelvin</option>
         </select>
 
-        <button type="button">Converter</button>
-        <button type="reset">Limpar</button>
+        <button type="button" id="btConvert">Converter</button>
+        <button type="reset" id= btLimpaTemp onclick="document.querySelector('#btLimpaTemp').innerHTML= '';">Limpar</button>
     </form>
+    <div id="conversao"></div>
     
     <script src="desafio2.js"></script>
     <script src="desafio3.js"></script>
@@ -64,7 +65,15 @@
            // document.querySelector('#resultadoIMC').innerHTML = '';
         //})
     </script>
-
+<script>
+    document.querySelector('#btConvert').addEventListener('click', function(){
+        const temperaturaAtual = document.querySelector('#valorTemperatura').value;
+        const escalaAtual = document.querySelector('#escalaAtual').value;
+        const escalaConvertida = document.querySelector('#escalaConvertida').value;
+        const conversao = converteTemperatura(temperaturaAtual, escalaAtual, escalaConvertida);
+        document.querySelector('#conversao').innerHTML = `${conversao.resultadoConvertido + conversao.escalaConvertida + conversao.msgErro}`;
+    })
+</script>
 
 </body>
 </html>

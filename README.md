@@ -167,3 +167,6 @@ Desenvolva o programa do desafio 3 em uma página HTML, obtendo os dados a parti
 * Utilize tags `<select>` para selecionar as escalas atuais e de conversão;
 * Utilize um botão para calcular a temperatura;
 * Apresente o resultado logo abaixo do formulário.
+
+
+**Array** é um conjunto de dados englobados em uma variável. Link de informações. Usado em [] 
