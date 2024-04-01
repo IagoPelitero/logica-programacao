@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de um triângulo</title>
+</head>
+<body>
+    <h1>Valores do triângulo</h1>
+
+    <form action="">
+        <label for="ladoA">LadoA(direito):</label>
+        <input type="number" id="ladoA">
+    
+        <label for="ladoB">LadoB(esquerdo):</label>
+        <input type="number" id="ladoB">
+
+        <label for="ladoC">LadoC(baixo):</label>
+        <input type="number" id="ladoC">
+    
+        <button type="button" id="btResultadoTri">Resultado</button>
+        <button type="reset" id="limpar" onclick="document.querySelector('#btResultadoTri').innerHTML= '';">Limpar</button>
+
+    </form>
+    <div id="resultadoTri"></div>
+
+    <script src="exercicio1.js"></script>
+    <script>
+    document.querySelector('#btResultadoTri').addEventListener('click', function (){
+            const ladoA = document.querySelector('#ladoA').value;
+            const ladoB = document.querySelector('#ladoB').value;
+            const ladoC = document.querySelector('#ladoC').value;
+            const resultado = ladosTriangulo(ladoA, ladoB, ladoC);
+            // parte de entro do HTML -> innerHTML
+            document.querySelector('#resultadoTri').innerHTML = resultado;
+        });
+    </script>
+</body>
+</html>

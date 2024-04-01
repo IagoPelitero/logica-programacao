@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Document</title>
 </head>
 <body>
     <h1>Programinhas</h1>
-    <!-- TODO: Eliminar esses botões -->    
     <h2>Calculadora IMC</h2>
 
     <form action="">
@@ -20,7 +18,6 @@
     
         <button type="button" id="btCalcIMC">Calcular IMC</button>
         <button type="reset" id="btLimpaIMC" onclick="document.querySelector('#resultadoIMC').innerHTML= '';">Limpar</button>
-
     </form>
 
     <div id="resultadoIMC"></div>
@@ -32,6 +29,7 @@
         <input type="number" id="valorTemperatura">
 
         <label for="escalaAtual">De:</label>
+
         <select id="escalaAtual">
             <option value="C" selected>Celsius</option>
             <option value="F">Fahrenheit</option>
@@ -39,6 +37,7 @@
         </select>
 
         <label for="escalaConvertida">Atual:</label>
+
         <select id="escalaConvertida">
             <option value="C">Celsius</option>
             <option value="F" selected>Fahrenheit</option>
@@ -46,12 +45,16 @@
         </select>
 
         <button type="button" id="btConvert">Converter</button>
+
         <button type="reset" id= btLimpaTemp onclick="document.querySelector('#btLimpaTemp').innerHTML= '';">Limpar</button>
     </form>
+
     <div id="conversao"></div>
     
     <script src="desafio2.js"></script>
+
     <script src="desafio3.js"></script>
+
     <script>
         document.querySelector('#btCalcIMC').addEventListener('click', function (){
             const peso = document.querySelector('#peso').value;
@@ -65,15 +68,15 @@
            // document.querySelector('#resultadoIMC').innerHTML = '';
         //})
     </script>
+
 <script>
     document.querySelector('#btConvert').addEventListener('click', function(){
         const temperaturaAtual = document.querySelector('#valorTemperatura').value;
         const escalaAtual = document.querySelector('#escalaAtual').value;
         const escalaConvertida = document.querySelector('#escalaConvertida').value;
         const conversao = converteTemperatura(temperaturaAtual, escalaAtual, escalaConvertida);
-        document.querySelector('#conversao').innerHTML = `${conversao.resultadoConvertido + conversao.escalaConvertida + conversao.msgErro}`;
+        document.querySelector('#conversao').innerHTML = `${conversao.msgErro}`;
     })
 </script>
-
 </body>
 </html>
