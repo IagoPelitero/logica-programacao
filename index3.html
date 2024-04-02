@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Desconto</h1>
+
+    <section>
+    <form action="">
+        <label for="valorCompra">Valor da Compra</label>
+        <input type="number" id="valorCompra">
+
+        <label for="desconto">Você é:</label>
+        <select id="desconto">
+            <option value="C">Cliente</option>
+            <option value="F">Funcionário</option>
+            <option value="V">Vip</option>
+        </select>
+    </section>
+    
+    <section>
+    </form>
+    
+    <form action="">
+
+    <button type="button" id="ad">Aplicar desconto</button>
+    <button type="reset" id="limpar">Limpar</button>
+
+    </form>
+    </section>
+
+    <div id="resultadoDesconto"></div>
+    <script src="exercicio2.js"></script>
+
+    <script>
+
+function totalDesconto (valorCompra, cliente){
+
+let desconto;
+
+// desconto = valor * percentualDesconto / 100
+
+if (cliente === 'v') {
+        desconto = `O valor da compra ${valorCompra} ganhou ${(valorCompra * 5) / 100}`
+    } else if (cliente === 'f') {
+        desconto = `O valor da compra ${valorCompra} ganhou ${(valorCompra * 10) / 100}`
+    } else {
+        desconto = `O valor da compra ${valorCompra} não ganhou desconto`
+    } 
+
+    return desconto;
+}
+
+        document.querySelector('#ad').addEventListener('click', function(){
+            const compra = document.querySelector('#valorCompra').value;
+            const cliente = document.querySelector('#desconto').value;
+
+            const descontoAplicado = totalDesconto(compra, cliente);
+
+            document.querySelector('#resultadoDesconto').innerHTML = descontoAplicado;
+        })
+
+    </script>
+
+</body>
+</html>

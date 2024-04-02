@@ -3,37 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
     <title>Tipo de um triângulo</title>
 </head>
 <body>
+
+    <a href="index.html">Página Inicial</a>
+
     <h1>Valores do triângulo</h1>
 
     <form action="">
-        <label for="lA">LadoA(direito):</label>
-        <input type="number" id="lA">
+        <label for="ladoA" >LadoA(direito):</label>
+        <input type="number" id="ladoA" min="0">
     
         <label for="ladoB">LadoB(esquerdo):</label>
-        <input type="number" id="lB">
+        <input type="number" id="ladoB" min="0">
 
         <label for="ladoC">LadoC(baixo):</label>
-        <input type="number" id="lC">
+        <input type="number" id="ladoC" min="0">
     
         <button type="button" id="btResultadoTri">Resultado</button>
-        <button type="reset" id="limpar" onclick="document.querySelector('#btResultadoTri').innerHTML= '';">Limpar</button>
-
+        <button type="reset" id="btlimpar">Limpar</button>
     </form>
+    
     <div id="resultadoTri"></div>
-
-    <script src="exercicio1.js"></script>
+    
     <script>
-    document.querySelector('#btResultadoTri').addEventListener('click', function (){
-            const ladoA = document.querySelector('#ladoA').value;
-            const ladoB = document.querySelector('#ladoB').value;
-            const ladoC = document.querySelector('#ladoC').value;
+        document.querySelector('#btResultadoTri').addEventListener('click', () => {
+            const ladoA = Number(document.querySelector('#ladoA').value);
+            const ladoB = Number(document.querySelector('#ladoB').value);
+            const ladoC = Number(document.querySelector('#ladoC').value);
+    
             const resultado = ladosTriangulo(ladoA, ladoB, ladoC);
-            // parte de entro do HTML -> innerHTML
-            document.querySelector('#resultadoTri').innerHTML = resultado;
+            
+        document.querySelector('#resultadoTri').innerHTML = resultado;
         });
+
+        function ladosTriangulo(ladoA, ladoB, ladoC) {
+
+        let resultado, mensagemErro;
+
+        if (ladoA < (ladoB + ladoC) && ladoB < (ladoA + ladoC) && ladoC < (ladoA + ladoB)){
+            if (ladoA === ladoB && ladoB === ladoC){
+                resultado = 'Equilátero'
+            } else if (ladoA === ladoB || ladoA === ladoB || ladoB === ladoC) {
+                resultado = 'Isóceles'
+            } else {
+                resultado = 'Escaleno'
+            }
+            } else {
+                mensagemErro = 'A forma não é um triângulo'
+            }
+        return resultado ?? mensagemErro;
+
+        // ?? => operador de coalescência
+    };
+
+
     </script>
 </body>
 </html>

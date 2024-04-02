@@ -28,6 +28,8 @@ Faça um programa que calcule o valor total a ser pago por uma pessoa. O program
 
 A saída do programa deve ser o valor total da compra após o processamento e a categoria do desconto aplicado, se houver.
 
+**Dica:** para calcular um percentual de um número, faça a operação `desconto = valor * percentualDesconto / 100`
+
 ## 3. Jogo de Futebol
 
 Desenvolva um programa que receba do usuário o placar de um jogo de futebol (os gols de cada time), e informa se o resultado foi empate, vitória do primeiro time ou vitória do segundo time.

@@ -6,8 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="index2.iindex2.html">Exercicio1</a>
+    <h1>Exercícios</h1>
+    <nav>
+        <ul>
+            <li><a href="index2.html">Exercicio1</a></li>
+            <li><a href="index3.html">Exercicio2</a></li>
+        </ul>
+    </nav>
     <h1>Programinhas</h1>
+    <!-- TODO: eliminar esses botões -->
+    <button type="button" onclick="calculaIMC()">Calculadora IMC</button>
+    <button type="button" onclick="converteTemperatura()">Conversor Temperatura</button>
+
     <h2>Calculadora IMC</h2>
 
     <form action="">
@@ -76,8 +86,16 @@
         const escalaAtual = document.querySelector('#escalaAtual').value;
         const escalaConvertida = document.querySelector('#escalaConvertida').value;
         const conversao = converteTemperatura(temperaturaAtual, escalaAtual, escalaConvertida);
-        document.querySelector('#conversao').innerHTML = `${conversao.msgErro}`;
-    })
+
+        if (conversao.msgErro === 'Ok') {
+
+document.querySelector('#conversao').innerHTML = `Temperatura convertida: ${conversao.temperaturaConvertida + (conversao.grauEscala ? ' °' : ' ') + conversao.escalaConversao}`;
+
+} else {
+
+document.querySelector('#conversao').innerHTML = conversao.msgErro;
+}});
+
 </script>
 </body>
 </html>
