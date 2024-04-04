@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+        </ul>
+    </nav>
+
+    <form action="">
+
+        <label for="quantosLitros">Litros</label>
+        <input type="number" id="quantosLitros" min="0">
+
+        <label for="tipoCombustivel">Combustível:</label>
+        <select id="tipoCombustivel">
+            <option value="G">Gasolina</option>
+            <option value="A">Alcool</option>
+        </select>
+
+        <button type="button" id="valorDesconto">Valor do Desconto</button>
+        <button type="reset">Limpar</button>
+
+    </form>
+
+    <div id="descontoAplicado"></div>
+
+    <script>
+        function preco(litros, combustível){
+            let descontpAplicado, mensErro;
+
+            if (litros <= 20) {
+                if (combustível === 'G'){
+                descontpAplicado = `O valor do desconto é R$ ${litros * 5.19 * 0.04}`
+            } else {
+                descontpAplicado = `O valor do desconto é R$ ${litros * 2.89 * 0.03}`
+            }
+        } else if (litros > 20) {
+        if (combustível === 'G'){
+            descontpAplicado = `O valor do desconto é R$ ${litros * 5.19 * 0.06}`
+        } else {
+            descontpAplicado = `O valor do desconto é R$ ${litros * 2.89 * 0.05}`
+        }} else {
+            mensErro = 'Dado não encontrado'
+        }
+        return descontpAplicado ?? mensErro;
+    }
+
+    document.querySelector('#valorDesconto').addEventListener('click', () => {
+        const litros = document.querySelector('#quantosLitros').value;
+        const combustível = document.querySelector('#tipoCombustivel').value;
+        const desconto = preco(litros, combustível)
+        
+        document.querySelector('#descontoAplicado').innerHTML = desconto;
+    })
+    </script>
+</body>
+</html>

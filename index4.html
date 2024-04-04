@@ -41,8 +41,8 @@
     }
 
     document.querySelector('#btResultado').addEventListener('click', () => {
-        const timeUm = document.querySelector('#timeUm').value;
-        const timeDois = document.querySelector('#timeDois').value;
+        const timeUm = Number(document.querySelector('#timeUm').value);
+        const timeDois = Number(document.querySelector('#timeDois').value);
         const resultadoPlacar = resultadoJogo(timeUm, timeDois)
 
         document.querySelector('#resultadoPlacar').innerHTML = resultadoPlacar;

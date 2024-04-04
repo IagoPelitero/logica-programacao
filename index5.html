@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,25 +14,38 @@
 
     <form action="">
         <label for="">Digite o nome:</label>
-        <input type="text">
+        <input type="text" id="procuraNome">
 
-        <button type="button">Procurar</button>
+        <button type="button" id="btProcurar">Procurar</button>
         <button type="reset">Limpar</button>
     </form>
+    <div id="nomeDigitado"></div>
+    <div id="resposta"></div>
 
     <script>
-        function listaDeNomes(nome)
+        function procuraNome(nome) {
 
-        let localizado = {
-            "Ana";
-            "Bruna";
-            "Carla";
-            "Daniel";
-            
+            const baseNomes = ["Ana", "Cilene", "Sabrina", "Karina", "Patricia", "Eduardo", "Pedro", "Willian", "Erick", "Hebert"];
+
+            let nomeEncontrado;
+
+            if (baseNomes.includes(nome)) {
+                nomeEncontrado = 'Achei'
+            } else {
+                nomeEncontrado = 'Não achei'
+            }
+
+            return nomeEncontrado;
         }
 
-        return localizado;
+        document.querySelector('#btProcurar').addEventListener('click', () => {
+            const nome = document.querySelector('#procuraNome').value;
+            const nomeEncontrado = procuraNome(nome);
 
+            document.querySelector('#resposta').innerHTML = nomeEncontrado;
+            document.querySelector('#nomedigitado').innerHTML = nomeEncontrado;
+        })
     </script>
+
 </body>
 </html>
