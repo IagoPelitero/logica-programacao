@@ -36,20 +36,20 @@
 
             if (litros <= 20) {
                 if (combustível === 'G'){
-                descontpAplicado = `O valor do desconto é R$ ${litros * 5.19 * 0.04}`
+                descontpAplicado = `Combustível escolhido é a Gasolina. O valor do desconto é de R$ ${(litros * 5.19 * 0.04).toFixed(2)}. O valor a pagar com desconto é o R$ ${((litros * 5.19)-(litros * 5.19 * 0.04)).toFixed(2)}`;
             } else {
-                descontpAplicado = `O valor do desconto é R$ ${litros * 2.89 * 0.03}`
+                descontpAplicado = `Combustível escolhido é o álcool. O valor do desconto é de R$ ${(litros * 2.89 * 0.03).toFixed(2)}. O valor a pagar com desconto é o R$ ${((litros * 2.89)-(litros * 2.89 * 0.03)).toFixed(2)}`;
             }
         } else if (litros > 20) {
         if (combustível === 'G'){
-            descontpAplicado = `O valor do desconto é R$ ${litros * 5.19 * 0.06}`
+            descontpAplicado = `Combustível escolhido é a Gasolina. O valor do desconto é de R$ ${(litros * 5.19 * 0.06).toFixed(2)}. O valor a pagar com desconto é o R$ ${((litros * 5.19)-(litros * 5.19 * 0.06)).toFixed(2)}`;
         } else {
-            descontpAplicado = `O valor do desconto é R$ ${litros * 2.89 * 0.05}`
+            descontpAplicado = `Combustível escolhido é o álcool.O valor do desconto é de R$ ${(litros * 2.89 * 0.05).toFixed(2)}. O valor a pagar com desconto é o R$ ${((litros * 2.89)-(litros * 2.89 * 0.05)).toFixed(2)}`;
         }} else {
             mensErro = 'Dado não encontrado'
-        }
+        } 
         return descontpAplicado ?? mensErro;
-    }
+    } 
 
     document.querySelector('#valorDesconto').addEventListener('click', () => {
         const litros = document.querySelector('#quantosLitros').value;
