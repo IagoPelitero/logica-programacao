@@ -10,13 +10,13 @@
 <body>
 <nav>
     <ul>
-        <li><a href="index.html">Página Inicial</a></li>
-        <li><a href="index3.html">Exercicio2</a></li>
+        <li><a href= "index.html">↩Página Inicial</a></li>
     </ul>
 </nav>
 
-    <h1>Valores do triângulo</h1>
+    <h1 class="titulo-pagina">Valores do triângulo</h1>
 
+    <main>
     <form action=".">
 
         <div class="elementos-em-linha">
@@ -25,19 +25,20 @@
             <label for="ladoA">LadoA:</label>
             <input type="number" id="ladoA" min="0">
             </div>
-        
-            <div class="controle-form">
+
+            <div>
             <label for="ladoB">LadoB:</label>
             <input type="number" id="ladoB" min="0">
             </div>
-    
-            <div class="controle-form">
+            
+            <div>
             <label for="ladoC">LadoC:</label>
             <input type="number" id="ladoC" min="0">
             </div>
+        
         </div>
-    
-        <div class="botao">
+        
+        <div class="botoes">
         <button type="button" id="btResultadoTri">Resultado</button>
         
         <button type="reset" id="btlimpar">Limpar</button>
@@ -46,6 +47,7 @@
     </form> 
     
     <div id="resultadoTri"></div>
+</main>
     
     <script>
         document.querySelector('#btResultadoTri').addEventListener('click', () => {

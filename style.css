@@ -1,33 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-
-:root {
-    font-size: 16px;
-    --fonte-general: 'Ubuntu', sans-serif;
+*{
+    box-sizing: border-box;
 }
 
+/*Aqui todo texto dentro do body vai usar a fonte "Ubuntu" importada do Google Fonts, caso não use vai usar qualquer uma sem serif*/
 body {
-    font-family: var(--fonte-general);
+    font-family: 'Ubuntu', sans-serif;
+    background-color: beige;
 }
 
-h1 {
-    font-size: 1.5rem;
-    margin-left: 30rem;
-}
-
-.elementos-em-linha {
-    display: flex;
-    justify-content: space-between;
-}
-
-.botao{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    padding-right: 100px;
-}
-
-form {
+.titulo-pagina {
     width: 600px;
-    padding: 10px 300px;
+    margin: 2rem auto; /*Define a margem 2 para cima e 2 para baixo*/
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+main {
+    width: 600px;
+    border: 1px solid black;
+    margin: auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 4px 4px 2px #888;
+}
+
+.elementos-em-linha{
+    display: flex; /*Vai organizar os elementos com flexbox*/
+    justify-content: space-between; 
+    border-radius: 5px;
+    gap: 1rem;
+}
+
+.botoes{
+    margin: 2rem 0;
+    display: flex;
+    gap: 1rem;
+}
+
+button {
+    width: 100%;
+    line-height: 2.2rem;
+}
+
+input {
+    width: 100%;
+    line-height: 2.2rem;
+}
+
+#resultadoTri{
+    border: 1px solid black;
+    height: 2rem;
+    margin: 2rem 0 0 0;
+    border-radius: 6px;
 }
