@@ -9,11 +9,6 @@
 
     <h1>Produtos</h1>
 
-    <p>Valor dos produtos:</p>
-    <p>Limpeza: R$ 5</p>
-    <p>Comida: R$ 10</p>
-    <p>Bebida: R$ 15</p>
-
     <form action="">
 
         <label for="produto">Tipo de produto comprado (limpeza, comida, bebida):</label>
@@ -31,30 +26,7 @@
 
     <script>
 
-        function produtosDesconto(produto, quantidade) {
-            
-            const produtosEstoque = ['limpeza', 'comida', 'bebida'];
-            let temProduto;
-
-            if (produtosEstoque.includes(produto)){
-                    temProduto = 'achei'             
-            } else {
-                mensagemErro = 'Produto não encontrado'
-            }
-
-            console.log(typeof(quantidade),typeof(produto))
-            
-            return temProduto;
-        }
-
-        document.querySelector('#btDesconto').addEventListener('click', ()=> {
-            const produto = document.querySelector('#produto').value;
-            const quantidade = document.querySelector('#quantidade').value;
-            const desconto = produtosDesconto(produto, quantidade);
-
-            document.querySelector('#desconto').innerHTML = desconto;
-
-        })
+        
 
     </script>
 </body>

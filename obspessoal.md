@@ -71,3 +71,63 @@ nomedoarray.pop () vai sempre remover o último elemento do array e vai retornar
 (Ele joga o elemento para esquerda)
 
 array.includes() => esse método apenas usa o bolean (traz se tem ou não o elemento, verdadeiro ou falso). Não retira ou acrescenta nenhum elemento no array.
+
+required autofocus -> Required siginifica para que ele seja obrigatório e autofocus e para chamar atenção (piscar)
+
+document.querySelector('label[for="nome"]') -> Uma forma de coletar o label e seu atributo pelo querySelector. Obs: não utilizar espaço no label.
+
+label[for="nome"] -> também podemo usar para estilizar pois ele é válido no CSS também.
+
+.classList = acessa a lista de classes do elemento
+.add (método) = adicionar
+
+condição alteranativa : nome.indexOf(nomeBusacdo >= 0)
+
+`Achei o na posição ${nomes.indexOf(nomeBusacdo)}, ${nome[nomes.indexOf(nomeBuscado)]}`
+
+${nomes.indexOf(nomeBusacdo)} -> me traz o índice do nome que estou buscando.
+
+indexOf -> me traz o indice que está no vetor.
+
+for(loop) -> percorre o indice de forma manual e imprime resultado 
+
+forIt (método)-> percorre de forma automática
+
+~~~js
+ <script>
+
+        let i = 0; // contador de indice
+        let nomes = []; //array vazio
+
+
+        document.querySelector('#btCadastrar').addEventListener('click', () => {
+
+
+            nomes [i] = document.querySelector('#nomeInclusao').value;
+
+            i++;
+        })
+
+        document.querySelector('#btMostrar').addEventListener('click', () => {
+            for (let i = 0; i < nomes.length; i++){
+
+               document.querySelector('#resultado').innerHTML += nomes [i] + '<br>';
+            }
+        })
+
+        // TODO:
+        // 1. Quando clicar no botão cadastrar, limpar o input;
+        // 2. Limitar a 10 nomes para cadastrar
+        // 3. Após o 10º nome, o campo permite buscar um nome no array;
+        // 4. Exibir se o nome foi encontrado
+
+    </script>
+
+</body>
+</html>
+~~~
+
+keydown -> sempre que pressionado a tecla
+Keyup -> sempre quando solto a tecla
+
+evento.preventDefault() -> método do evento | Previne que a tecla seja pressionada

@@ -3,49 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Busca de um nome</title>
+
+    <style>
+        .oculto {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Página Inicial</a></li>
-        </ul>
-    </nav>
 
     <form action="">
-        <label for="">Digite o nome:</label>
-        <input type="text" id="procuraNome">
 
-        <button type="button" id="btProcurar">Procurar</button>
-        <button type="reset">Limpar</button>
+        <label for="nome">Nome para incluir:</label>
+        <input type="text" id="nome" required autofocus>
+
+        <button type="reset" id="btCadastrar">Cadastrar</button>
+
+        <button type="button" id="btPesquisar" class="oculto">Pesquisar</button>
+
     </form>
-    <div id="nomeDigitado"></div>
-    <div id="resposta"></div>
-
+    
+    <div id="resultado"></div>
+    
     <script>
-        function procuraNome(nome) {
+        
+        let nomes = []; // array vazio chamado "nomes"
 
-            const baseNomes = ["Ana", "Cilene", "Sabrina", "Karina", "Patricia", "Eduardo", "Pedro", "Willian", "Erick", "Hebert"];
+        document.addEventListener('keydown', (evento) => {
+            if (evento.key === 'Enter') {
+                //previne o comportamento da tecla enter
+                evento.preventDefault();
 
-            let nomeEncontrado;
-
-            if (baseNomes.includes(nome)) {
-                nomeEncontrado = 'Achei'
-            } else {
-                nomeEncontrado = 'Não achei'
-            }
-
-            return nomeEncontrado;
-        }
-
-        document.querySelector('#btProcurar').addEventListener('click', () => {
-            const nome = document.querySelector('#procuraNome').value;
-            const nomeEncontrado = procuraNome(nome);
-
-            document.querySelector('#resposta').innerHTML = nomeEncontrado;
-            document.querySelector('#nomedigitado').innerHTML = nomeEncontrado;
+                if (nomes.length < 10){
+                    //Quero que se não tiver cadastrado os 10 nomes ele permita o click do enter
+                    //Transforma o enter em um click
+                    document.querySelector('#btCadastrar').click();
+                    //cilck se torna um método do botão Cadastrar
+                } else {
+                    document.querySelector('#btPesquisar').click();
+                }
+            } 
         })
-    </script>
+ 
 
+        document.querySelector('#btCadastrar').addEventListener('click', () => {
+
+            nomes.push(document.querySelector('#nome').value);
+
+
+            //Se a lista de nomes atingir 10
+            if (nomes.length === 10) {
+
+                //Troque a label do input "nome"
+                document.querySelector('label[for="nome"]').innerHTML = 'Nome para pesquisar:';
+
+                //oculte o botão cadastrar
+                document.querySelector('#btCadastrar').classList.add('oculto');
+
+                //Desoculte o botão pesquisar
+                document.querySelector('#btPesquisar').classList.remove('oculto');
+            } 
+
+
+        });
+
+        document.querySelector('#btPesquisar').addEventListener('click', () => {
+
+            const nomeBuscado = document.querySelector('#nome').value;
+            
+            if (nomes.includes(nomeBuscado)) {
+                document.querySelector('#resultado').innerHTML = `Achei o nome no índice ${nomes.indexOf(nomeBuscado)}. ${nomeBuscado}`;
+            } else {
+                document.querySelector('#resultado').innerHTML = 'Não achei';
+            }
+            
+        });
+
+        // TODO: 
+        
+    
+        // 3. Após o 10º nome, o campo permite buscar um nome no array
+        // 4. Exibir se o nome foi encontrado
+
+    </script>
 </body>
 </html>
