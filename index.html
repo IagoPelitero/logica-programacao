@@ -3,46 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style-index.css">
+    <title>Página inicial</title>
 </head>
 <body>
-    <h1>Exercícios</h1>
     <nav>
         <ul>
-            <li><a href="tipo-triangulo.html">Exercicio1</a></li>
-            <li><a href="desconto-funcionario.html">Exercicio2</a></li>
-            <li><a href="jogo-futebol.html">Exercício3</a></li>
-            <li><a href="busca-nome.html">Exercício4</a></li>
-            <li><a href="posto-gasolina.html".html">Exercício5</a></li>
+            <li><a href="tipo-triangulo.html">🔜1️⃣Classificando Triangulo</a></li>
+            <li><a href="desconto-funcionario.html">🔜2️⃣Desconto</a></li>
+            <li><a href="jogo-futebol.html">🔜3️⃣Tabela do jogo</a></li>
+            <li><a href="busca-nome.html">🔜4️⃣Buscador de nomes</a></li>
+            <li><a href="posto-gasolina.html">🔜5️⃣ Preço da Gasolina</a></li>
         </ul>
     </nav>
-    <h1>Programinhas</h1>
-    <!-- TODO: eliminar esses botões -->
-    <button type="button" onclick="calculaIMC()">Calculadora IMC</button>
-    <button type="button" onclick="converteTemperatura()">Conversor Temperatura</button>
 
+    <h1 id="tituloPagina">Programinhas</h1>
+  
     <h2>Calculadora IMC</h2>
 
+    <main>
     <form action="">
+
+        <div class="alinhamento">
         <label for="peso">Peso:</label>
         <input type="number" id="peso" step="0.5" min="0" max="1000">
     
         <label for="altura">Altura:</label>
         <input type="number" id="altura" step="0.01" min="0" max="3">
-    
+
+        </div>
+        
+        <div>
         <button type="button" id="btCalcIMC">Calcular IMC</button>
+
+
         <button type="reset" id="btLimpaIMC" onclick="document.querySelector('#resultadoIMC').innerHTML= '';">Limpar</button>
+
+        </div>
     </form>
 
     <div id="resultadoIMC"></div>
+    </main>
 
+    
     <h2>Conversor de temperatura</h2>
 
+    <main>
     <form action="">
+
+        <div class="alinhamento">
         <label for="valorTemperatura">Temperatura:</label>
         <input type="number" id="valorTemperatura">
 
+        </div>
+
+        <div>
         <label for="escalaAtual">De:</label>
+        
 
         <select id="escalaAtual">
             <option value="C" selected>Celsius</option>
@@ -58,12 +76,18 @@
             <option value="K">Kelvin</option>
         </select>
 
+        </div>
+
+        <div>
         <button type="button" id="btConvert">Converter</button>
 
         <button type="reset" id= btLimpaTemp onclick="document.querySelector('#btLimpaTemp').innerHTML= '';">Limpar</button>
+        </div>
     </form>
 
     <div id="conversao"></div>
+
+    </main>
     
     <script src="desafio2.js"></script>
 

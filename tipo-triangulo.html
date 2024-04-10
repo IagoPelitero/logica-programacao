@@ -38,16 +38,15 @@
         
         </div>
         
-        <div class="botoes">
-        <button type="button" id="btResultadoTri">Resultado</button>
-        
-        <button type="reset" id="btlimpar">Limpar</button>
-        </div>
+            <div class="botoes">
+                <button type="button" id="btResultadoTri">Resultado</button>
+                <button type="reset" id="btLimpar">Limpar</button>
+            </div>
 
-    </form> 
+        </form> 
     
-    <div id="resultadoTri"></div>
-</main>
+        <div id="resultadoTri"></div>
+    </main>
     
     <script>
         document.querySelector('#btResultadoTri').addEventListener('click', () => {
@@ -58,7 +57,11 @@
             const resultado = ladosTriangulo(ladoA, ladoB, ladoC);
             
         document.querySelector('#resultadoTri').innerHTML = resultado;
+
         });
+
+        document.querySelector('#btLimpar').addEventListener('click', () => {
+            document.querySelector('#resultadoTri').innerHTML = '';})
 
         function ladosTriangulo(ladoA, ladoB, ladoC) {
 

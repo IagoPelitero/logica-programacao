@@ -48,6 +48,11 @@ button {
 input {
     width: 100%;
     line-height: 2.2rem;
+    border-radius: 4px;
+    border: 1px solid #000;
+    padding-left: 8px;
+    margin-top: 4px;
+    /*outline: none;*/
 }
 
 #resultadoTri{
@@ -55,4 +60,48 @@ input {
     height: 2rem;
     margin: 2rem 0 0 0;
     border-radius: 6px;
+    display: flex;
+    flex-direction: row;/*estabelece a direção de alinhamento*/
+    justify-content: center;/*alinha no eixo principal*/
+    align-items: center;/*alinha no eixo secundário*/
 }
+
+button {
+    border: none; /*Retira a borda do botão*/
+    border-radius: 4px; /*Arredonda a borda*/
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    box-shadow: inset 2px 2px 2px #333;
+}
+
+#btResultadoTri {
+    background-color: #2078ec; /*Cor de fundo do botão*/
+    color: #FFFFFF; /*Cor da letra do botão*/
+}
+
+#btResultadoTri:hover {
+    background-color: #2078ec;
+}
+
+#btResultadoTri:active {
+    background-color: #1d6dd6;
+}
+
+#btLimpar{
+    background-color: #e85391;
+    color: #FFFFFF;
+}
+
+#btlimpar:hover {
+    background-color: #e85391;
+}
+
+#btlimpar:active{
+    background-color: #e82375;
+}
+
